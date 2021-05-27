@@ -13,9 +13,17 @@ namespace Lab2.Models
             Dormitory = new List<Dormitory>();
         }
         public int Id { get; set; }
+        //[Required(ErrorMessage = "Поле не може бути порожнім")]
+        //[Display(Name ="Університет")]
+        //public string University { get; set; }
+        //[Required(ErrorMessage = "Поле не може бути порожнім")]
+        //[Display(Name = "Кампус")]
+        //public string Name { get; set; }
+
         [Required(ErrorMessage = "Поле не може бути порожнім")]
-        [Display(Name ="Університет")]
-        public string University { get; set; }
+        [Display(Name = "Унiверситет")]
+        public int UniversityId { get; set; }
+        public virtual University University { get; set; }
 
         public virtual ICollection<Dormitory> Dormitory { get; set; }
     }
